@@ -1,0 +1,41 @@
+#include <iostream>
+
+#include "../../include/Angine/Angine.hpp"
+
+namespace An
+{
+  // sets opengl attributes. defined in An_SetAttributes.cpp
+  void glAttribs(int major, int minor, int depth_size)
+  {
+    if(SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION,major)<0)
+    {
+      std::cout << "glAttribs MAJOR_VERSION failed: ";
+      std::cerr << SDL_GetError() << std::endl;
+    }
+
+    if(SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION,minor)<0)
+    {
+      std::cout << "glAttribs MINOR_VERSION failed: ";
+      std::cerr << SDL_GetError() << std::endl;
+    }
+
+    if(SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
+          SDL_GL_CONTEXT_PROFILE_CORE)<0)
+    {
+      std::cout << "glAttribs PROFILE_MASK failed: ";
+      std::cerr << SDL_GetError() << std::endl;
+    }
+
+    if(SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,1)<0)
+    {
+      std::cout << "glAttribs DOUBLEBUFFER failed: ";
+      std::cerr << SDL_GetError() << std::endl;
+    }
+
+    if(SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE,depth_size)<0)
+    {
+      std::cout << "glAttribs DEPTH_SIZE failed: ";
+      std::cerr << SDL_GetError() << std::endl;
+    }
+  }
+}

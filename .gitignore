@@ -1,0 +1,6 @@
+build/
+test/
+*.vim
+*.swp
+*.[ados]
+*.out

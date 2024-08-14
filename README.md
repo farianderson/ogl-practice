@@ -1,0 +1,2 @@
+-this is on linux
+-needs SDL2 library
