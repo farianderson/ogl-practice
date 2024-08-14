@@ -1,5 +1,10 @@
+include/glad/glad.h
+include/KHR/
+src/glad/glad.c
+
 build/
 test/
+
 *.vim
 *.swp
 *.[ados]
