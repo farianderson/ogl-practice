@@ -8,3 +8,6 @@
     Specification : OpenGL
     Profile       : Core
     dont forget to hit 'ADD ALL' before hitting 'GENERATE'
+    after download:
+      put glad.c into src/glad/
+      put glad.h into include/glad/
