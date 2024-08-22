@@ -1,6 +1,9 @@
 #ifndef Angine
 #define Angine
 
+#include <chrono>
+#include <vector>
+
 #include <SDL2/SDL.h>
 #include "../../include/glad/glad.h"
 
@@ -11,6 +14,17 @@ namespace An
   extern SDL_Window* Window;
   extern SDL_GLContext Context;
 
+  extern GLuint VAO;
+  extern GLuint VBO;
+  extern GLuint ShaderProgram;
+  // vertex data. defined in An_VertexData.cpp
+  extern const std::vector<GLfloat> hi_tri;
+  // shader sources are initiated in An_vshader_src.cpp and An_fshader_src.cpp
+  extern const char* vshader_src;
+  // shader sources are initiated in An_vshader_src.cpp and An_fshader_src.cpp
+  extern const char* fshader_src;
+  
+  extern std::vector<GLfloat> CleaerColor;
 
   // initializing the Angine. defined in An_Init.cpp
   void Init();
@@ -36,9 +50,30 @@ namespace An
   //  An_LoadGlad.cpp
   void glInfo();
 
+  // defined in An_PipeLine.cpp
+  void PipeLine();
+
+  // defined in An_PreDraw.cpp
+  void PreDraw();
+
+  // defined in An_Draw.cpp
+  void Draw();
+
+  // creates a shader program and puts it into An::ShaderProgram. defined in
+  //  An_CreateShaderProgram.cpp
+  void CreateShaderProgram(const char* vshader_src, const char* fshader_src);
+
+  // compiles a shader source text into a shader. defined in An_ComplieShader.
+  //  cpp
+  GLuint CompileShader(GLenum type, const char* src);
+
   // Angine's main loop. defined in An_Loop.cpp
   void Loop();
 
+  // prints out the fps. frames and start_time_point should be passed by
+  // reference. defined in An_fpsCalc.cpp
+  void fpsCalc(int& frames,std::chrono::time_point<std::chrono::steady_clock>&
+      start_time_point);
 
   // clean ups before exiting the Angine, defined in An_CleanUps.cpp
   void CleanUps();

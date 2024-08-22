@@ -1,29 +1,30 @@
-Flags = -g -Wall -MMD 
+Flags = -g -Wall -MMD
 Srcs = $(shell find ./src -name '*.cpp' -o -name '*.c')
 Objs = $(subst ./src,./build,$(addsuffix .o,$(basename $(Srcs))))
 Incs = -I include
 Libs = -lSDL2 
 
-#test:
-#	@echo $(Objs)
+$(info )
 
 ./build/An:$(Objs)
-	@echo "===================================================="
-	@echo "building Angine..."
+	@echo "---------------------------------------"
+	@echo "▸building executable\n"
 	@g++ $(Flags) --sanitize=address -o ./build/An $(Objs) $(Libs)
-	@echo "done."
+	@sleep 1
+	@tree build -I Angine -I glad -P An --noreport
+	@echo "		done.\n"
 
 ./build/Angine/%.o:./src/Angine/%.cpp
-	@echo "building ▸ "$(notdir $@)
+	@echo "▸building "$(notdir $@)
 	@mkdir -p $(@D)
 	@g++ $(Flags) $(Incs) -c -o $@ $<
 
 ./build/glad/%.o:./src/glad/%.c
-	@echo "building ▸ "$(notdir $@)
+	@echo "▸building "$(notdir $@)
 	@mkdir -p $(@D)
 	@g++ $(Flags) $(Incs) -c -o $@ $<
 
 -include $(Objs:.o=.d)
 
 clear:
-	rm -rf build/
+	@rm -rf build/

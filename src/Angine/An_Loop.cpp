@@ -1,12 +1,17 @@
-#include<iostream>
+#include<chrono>
 
 #include "../../include/Angine/Angine.hpp"
 
 namespace An{
   void Loop()
   {
+    SDL_GL_SetSwapInterval(1);
+
+    auto start=std::chrono::steady_clock::now();
+    int frames = 0;
 
     SDL_Event event;
+
     while(IsPlaying)
     {
       while(SDL_PollEvent(&event))
@@ -16,6 +21,10 @@ namespace An{
           IsPlaying = false;
         }
       }
+
+      PipeLine();
+
+      fpsCalc(frames,start);
 
       SDL_GL_SwapWindow(Window);
     } 
