@@ -2,10 +2,10 @@
 
 namespace An
 {
-  void CreateShaderProgram(const char* vshader_src, const char* fshader_src)
+  void CreateShaderProgram(const char* vs_src, const char* fs_src)
   {
-    GLuint vshader = CompileShader(GL_VERTEX_SHADER, vshader_src);
-    GLuint fshader = CompileShader(GL_FRAGMENT_SHADER, fshader_src);
+    GLuint vshader = CompileShader(GL_VERTEX_SHADER, vs_src);
+    GLuint fshader = CompileShader(GL_FRAGMENT_SHADER, fs_src);
 
     ShaderProgram = glCreateProgram();
     glAttachShader(ShaderProgram, vshader);

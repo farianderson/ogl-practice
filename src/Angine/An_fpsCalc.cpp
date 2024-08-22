@@ -18,8 +18,6 @@ namespace An
       start_time_point = now;
       std::cout << "fps = " << frames << "\n\e[A";
       frames = 0;
-
     }
-
   }
 }

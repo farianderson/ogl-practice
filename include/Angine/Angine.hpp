@@ -53,6 +53,10 @@ namespace An
   // defined in An_PipeLine.cpp
   void PipeLine();
 
+  // creates some vertex data and sends it to the GPU. defined in An_TalkToThe
+  //  Vertex.cpp
+  void TalkToTheVertex();
+
   // defined in An_PreDraw.cpp
   void PreDraw();
 

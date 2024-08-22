@@ -5,7 +5,7 @@
 namespace An{
   void Loop()
   {
-    SDL_GL_SetSwapInterval(1);
+    SDL_GL_SetSwapInterval(0);
 
     auto start=std::chrono::steady_clock::now();
     int frames = 0;

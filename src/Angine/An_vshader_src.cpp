@@ -7,7 +7,7 @@ namespace An
     "in vec2 vpos;\n"
     "void main()\n"
     "{\n"
-    "  gl_Position = vec2(vpos.x, vpos.y, 0.0, 1.0);\n"
+    "  gl_Position = vec4(vpos.x, vpos.y, 0.0f, 1.0f);\n"
     "}\n"
     ;
 }

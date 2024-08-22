@@ -7,7 +7,6 @@ namespace An
     "out vec4 color;\n"
     "void main()\n"
     "{\n"
-    "  color = vec4(.8,.5,.1,1.0);\n"
-    "}\n"
-    ;
+    "  color = vec4(0.8f, 0.5f, 0.1, 1.0f);\n"
+    "}\n";
 }
