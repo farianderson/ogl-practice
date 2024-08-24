@@ -1,4 +1,7 @@
-#include "../../include/Angine/Angine.hpp"
+#include "../../include/Angine/An_Render.hpp"
+#include "../../include/Angine/An_Globals.hpp"
+
+#include <SDL2/SDL.h>
 
 namespace An
 {
@@ -6,5 +9,6 @@ namespace An
   {
     PreDraw();
     Draw();
+    SDL_GL_SwapWindow(Window);
   }
 }

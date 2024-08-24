@@ -1,12 +1,10 @@
-#ifndef Angine
-#define Angine
+#ifndef An_Render
+#define An_Render
 
-#include <SDL2/SDL.h>
 #include "../../include/glad/glad.h"
 
 namespace An
 {
-
   // defined in An_PipeLine.cpp
   void PipeLine();
 
@@ -28,22 +26,6 @@ namespace An
   // compiles a shader source text into a shader.
   // defined in An_ComplieShader.cpp
   GLuint CompileShader(GLenum type, const char* src);
-
-  // Angine's main loop. defined in An_Loop.cpp
-  void Loop();
-
-  // clean ups before exiting the Angine.
-  // defined in An_CleanUps.cpp
-  void CleanUps();
-
-  // destroys the An::Context. defined in An_CleanUps.cpp
-  void DeleteContext();
-
-  // destroys the An::Window. defined in An_CleanUps.cpp
-  void DestroyWindow();
-
-  // exit program returning 'status'
-  void Exit(int status);
 
 }
 

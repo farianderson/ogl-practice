@@ -1,5 +1,5 @@
-#include "../../include/Angine/Angine.hpp"
 #include "../../include/Angine/An_Inits.hpp"
+#include "../../include/Angine/An_CleanUps.hpp"
 #include "../../include/glad/glad.h"
 
 #include <iostream>

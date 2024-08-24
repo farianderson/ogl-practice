@@ -1,7 +1,8 @@
-#include <iostream>
-
-#include "../../include/Angine/Angine.hpp"
+#include "../../include/Angine/An_Inits.hpp"
 #include "../../include/Angine/An_Globals.hpp"
+#include "../../include/Angine/An_CleanUps.hpp"
+
+#include <iostream>
 
 namespace An
 {
