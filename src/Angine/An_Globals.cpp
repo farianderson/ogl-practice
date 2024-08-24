@@ -1,9 +1,10 @@
-#include "../../include/Angine/Angine.hpp"
+#include "../../include/Angine/An_Globals.hpp"
 
 namespace An{
   bool IsPlaying=true;
   SDL_Window* Window=nullptr;
   SDL_GLContext Context=nullptr;
+  SDL_Event Event;
 
   // defined in An_VertexData.cpp
   extern const std::vector<GLfloat> hi_tri;

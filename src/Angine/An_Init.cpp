@@ -1,6 +1,4 @@
-#include <iostream>
-
-#include "../../include/Angine/Angine.hpp"
+#include "../../include/Angine/An_Inits.hpp"
 
 namespace An{
   // initializing the Angine
@@ -9,7 +7,7 @@ namespace An{
 
     LoadSDL();
 
-    glAttribs(4,1,24);
+    glAttribs(4,1,24,1);
 
     CreateWindow("Angine",
         0,0,

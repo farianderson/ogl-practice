@@ -10,7 +10,7 @@ $(info )
 	@echo "---------------------------------------"
 	@echo "▸building executable\n"
 	@g++ $(Flags) --sanitize=address -o ./build/An $(Objs) $(Libs)
-	@sleep 1
+#	@sleep 1
 	@tree build -I Angine -I glad -P An --noreport
 	@echo "		done.\n"
 

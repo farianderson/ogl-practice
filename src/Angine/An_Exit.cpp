@@ -1,6 +1,7 @@
+#include "../../include/Angine/Angine.hpp"
+
 #include <iostream>
 
-#include "../../include/Angine/Angine.hpp"
 
 namespace An
 {

@@ -1,11 +1,12 @@
-#include <iostream>
+#include "../../include/Angine/An_Inits.hpp"
 
-#include "../../include/Angine/Angine.hpp"
+#include <iostream>
 
 namespace An
 {
   // sets opengl attributes. defined in An_SetAttributes.cpp
-  void glAttribs(int major, int minor, int depth_size)
+  void glAttribs(int major, int minor, int depth_size,
+                 int doublebuffer)
   {
     if(SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION,major)<0)
     {
@@ -26,7 +27,7 @@ namespace An
       std::cerr << SDL_GetError() << std::endl;
     }
 
-    if(SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,1)<0)
+    if(SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,doublebuffer)<0)
     {
       std::cout << "glAttribs DOUBLEBUFFER failed: ";
       std::cerr << SDL_GetError() << std::endl;

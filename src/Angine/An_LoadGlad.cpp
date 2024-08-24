@@ -1,11 +1,12 @@
-#include <iostream>
-
 #include "../../include/Angine/Angine.hpp"
+#include "../../include/Angine/An_Inits.hpp"
+#include "../../include/glad/glad.h"
+
+#include <iostream>
 
 namespace An
 {
-  // loads glad's GL Loader into SDL_GL_GetProcAddress. defined in 
-  //  An_LoadGlad.cpp
+  // loads glad's GL Loader into SDL_GL_GetProcAddress.
   void LoadGlad()
   {
     if(!gladLoadGLLoader(SDL_GL_GetProcAddress))

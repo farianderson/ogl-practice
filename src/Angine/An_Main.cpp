@@ -1,4 +1,6 @@
 #include "../../include/Angine/Angine.hpp"
+#include "../../include/Angine/An_Inits.hpp"
+#include "../../include/Angine/An_Globals.hpp"
 
 int main()
 {

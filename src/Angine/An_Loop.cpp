@@ -1,30 +1,28 @@
+#include "../../include/Angine/Angine.hpp"
+#include "../../include/Angine/An_Globals.hpp"
+#include "../../include/Angine/An_Events.hpp"
+#include "../../include/Angine/An_Utilities.hpp"
+
 #include<chrono>
 
-#include "../../include/Angine/Angine.hpp"
-
-namespace An{
+namespace An
+{
   void Loop()
   {
-    SDL_GL_SetSwapInterval(0);
+    SDL_GL_SetSwapInterval(1);
 
     auto start=std::chrono::steady_clock::now();
     int frames = 0;
 
-    SDL_Event event;
-
     while(IsPlaying)
     {
-      while(SDL_PollEvent(&event))
-      {
-        if (event.type == SDL_QUIT)
-        {
-          IsPlaying = false;
-        }
-      }
+      Events();
 
       PipeLine();
 
-      fpsCalc(frames,start);
+      fpsCalc(frames,start,.33333333);
+
+      //SDL_Delay(8);
 
       SDL_GL_SwapWindow(Window);
     } 
