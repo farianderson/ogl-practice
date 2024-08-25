@@ -2,7 +2,7 @@
 
 namespace An
 {
-  const char* vshader_src=
+  const GLchar* vshader_src=
     "#version 410 core\n"
     "in vec2 vpos;\n"
     "void main()\n"

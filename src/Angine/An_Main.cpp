@@ -20,9 +20,9 @@ int main()
   while(An::IsPlaying)
   {
     An::Events();
-    An::PipeLine();
     An::fpsCalc(frames,start,.33333333);
     //SDL_Delay(8);
-  } 
+    An::PipeLine();
+  }
   An::Exit(0);
 }

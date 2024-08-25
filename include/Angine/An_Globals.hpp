@@ -23,13 +23,13 @@ namespace An
 
   // shader sources are stored in 
   // An_vshader_src.cpp and An_fshader_src.cpp
-  extern const char* vshader_src;
+  extern const GLchar* vshader_src;
 
   // shader sources are stored in 
   // An_vshader_src.cpp and An_fshader_src.cpp
-  extern const char* fshader_src;
+  extern const GLchar* fshader_src;
 
-  extern std::vector<GLfloat> CleaerColor;
+  extern std::vector<GLfloat> BGColor;
 
 }
 

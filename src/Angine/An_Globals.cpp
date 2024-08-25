@@ -14,7 +14,7 @@ namespace An{
 
   GLuint ShaderProgram=0;
   // shader sources are initiated in An_vshader_src.cpp and An_fshader_src.cpp
-  extern const char* vshader_src;
-  extern const char* fshader_src;
-  std::vector<GLfloat> CleaerColor{.2,.15,.0,1.0};
+  extern const GLchar* vshader_src;
+  extern const GLchar* fshader_src;
+  std::vector<GLfloat> BGColor{.2,.15,.0,1.0};
 }

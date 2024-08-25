@@ -2,11 +2,11 @@
 
 namespace An
 {
-  const char* fshader_src=
+  const GLchar* fshader_src=
     "#version 410 core\n"
-    "out vec4 color;\n"
+    "out vec4 gl_Color;\n"
     "void main()\n"
     "{\n"
-    "  color = vec4(0.8f, 0.5f, 0.1, 1.0f);\n"
+    "  gl_Color = vec4(.6,.4,.1,1.);\n"
     "}\n";
 }
