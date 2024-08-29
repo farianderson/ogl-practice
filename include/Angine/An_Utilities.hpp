@@ -2,7 +2,7 @@
 #define An_Utilities
 
 #include <SDL2/SDL.h>
-
+#include <string>
 #include <chrono>
 namespace An
 {
@@ -13,7 +13,11 @@ namespace An
                std::chrono::steady_clock> &start_time_point,
                float interval_sec);
 
+  // updates the viewport to match the An::Window size
   void ViewPortUpdate();
+
+  // loads a text file as string
+  std::string LoadTextFile(const char* filename);
 }
 
 #endif

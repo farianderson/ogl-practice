@@ -9,6 +9,6 @@ namespace An
     glDisable(GL_CULL_FACE);
     ClearColor();
     glUseProgram(ShaderProgram);
-
+    SDL_GL_SetSwapInterval(1);
   }
 }

@@ -1,4 +1,5 @@
 #include "../../include/Angine/An_Globals.hpp"
+#include <string>
 
 namespace An{
   bool IsPlaying=true;
@@ -11,10 +12,8 @@ namespace An{
 
   GLuint VAO=0;
   GLuint VBO=0;
+  GLuint VBO_Color=0;
 
   GLuint ShaderProgram=0;
-  // shader sources are initiated in An_vshader_src.cpp and An_fshader_src.cpp
-  extern const GLchar* vshader_src;
-  extern const GLchar* fshader_src;
   std::vector<GLfloat> BGColor{.2,.15,.0,1.0};
 }

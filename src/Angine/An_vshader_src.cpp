@@ -1,8 +1,9 @@
 #include "../../include/Angine/An_Globals.hpp"
+#include <string>
 
 namespace An
 {
-  const GLchar* vshader_src=
+  std::string vshader_src=
     "#version 410 core\n"
     "in vec2 vpos;\n"
     "void main()\n"

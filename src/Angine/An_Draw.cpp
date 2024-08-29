@@ -1,3 +1,4 @@
+#include "../../include/Angine/An_Render.hpp"
 #include "../../include/Angine/An_Globals.hpp"
 
 namespace An
@@ -5,8 +6,6 @@ namespace An
   void Draw()
   {
     glBindVertexArray(VAO);
-    glBindBuffer(GL_ARRAY_BUFFER,VBO);
-    
     glDrawArrays(GL_TRIANGLES,0,3);
   }
 }

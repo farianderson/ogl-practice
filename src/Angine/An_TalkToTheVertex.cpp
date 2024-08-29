@@ -9,14 +9,23 @@ namespace An
 
     glGenBuffers(1,&VBO);
     glBindBuffer(GL_ARRAY_BUFFER,VBO);
-    glBufferData(GL_ARRAY_BUFFER,hi_tri.size()*sizeof(GLfloat),hi_tri.data(),
-        GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER,hi_tri.size()*sizeof(GLfloat),
+        hi_tri.data(),GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,0,(GLvoid*)0);
 
+    glGenBuffers(1,&VBO_Color);
+    glBindBuffer(GL_ARRAY_BUFFER,VBO_Color);
+    glBufferData(GL_ARRAY_BUFFER,tri_color.size()*sizeof(GLfloat),
+        tri_color.data(),GL_STATIC_DRAW);
+
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,0,(GLvoid*)0);
+
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER,0);
     glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
   }
 }
