@@ -6,36 +6,42 @@ namespace An
 {
   // sets opengl attributes. defined in An_SetAttributes.cpp
   void glAttribs(int major, int minor, int depth_size,
-                 int doublebuffer)
+                 int doublebuffer,int vsync)
   {
     if(SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION,major)<0)
     {
-      std::cout << "glAttribs MAJOR_VERSION failed: ";
+      std::cout << "\nglAttribs MAJOR_VERSION failed: ";
       std::cerr << SDL_GetError() << std::endl;
     }
 
     if(SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION,minor)<0)
     {
-      std::cout << "glAttribs MINOR_VERSION failed: ";
+      std::cout << "\nglAttribs MINOR_VERSION failed: ";
       std::cerr << SDL_GetError() << std::endl;
     }
 
     if(SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
           SDL_GL_CONTEXT_PROFILE_CORE)<0)
     {
-      std::cout << "glAttribs PROFILE_MASK failed: ";
+      std::cout << "\nglAttribs PROFILE_MASK failed: ";
       std::cerr << SDL_GetError() << std::endl;
     }
 
     if(SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,doublebuffer)<0)
     {
-      std::cout << "glAttribs DOUBLEBUFFER failed: ";
+      std::cout << "\nglAttribs DOUBLEBUFFER failed: ";
+      std::cerr << SDL_GetError() << std::endl;
+    }
+
+    if(SDL_GL_SetSwapInterval(vsync)<0)
+    {
+      std::cout << "\nSDL_GL_SetSwapInterval failed: ";
       std::cerr << SDL_GetError() << std::endl;
     }
 
     if(SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE,depth_size)<0)
     {
-      std::cout << "glAttribs DEPTH_SIZE failed: ";
+      std::cout << "\nglAttribs DEPTH_SIZE failed: ";
       std::cerr << SDL_GetError() << std::endl;
     }
   }

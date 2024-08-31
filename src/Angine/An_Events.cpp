@@ -1,8 +1,10 @@
 #include "../../include/Angine/An_Events.hpp"
-#include "../../include/Angine/An_Globals.hpp"
 
 namespace An
 {
+
+  SDL_Event Event;
+
   void Events()
   {
     while(SDL_PollEvent(&Event))

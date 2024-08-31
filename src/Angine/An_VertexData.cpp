@@ -1,4 +1,4 @@
-#include "../../include/Angine/An_Globals.hpp"
+#include "../../include/Angine/An_Render.hpp"
 
 namespace An
 {
@@ -16,6 +16,16 @@ namespace An
     1.0, 0.0, 0.0,
     0.0, 1.0, 0.0,
     0.0, 0.0, 1.0,
+  };
+
+  const std::vector<GLfloat> tri_pos_col=
+  {
+    -0.8,-0.8,
+     1.0, 0.0, 0.0,
+     0.0, 0.8,
+     0.0, 1.0, 0.0,
+     0.8,-0.8,
+     0.0, 0.0, 1.0,
   };
 
 }

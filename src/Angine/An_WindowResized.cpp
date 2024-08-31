@@ -7,8 +7,8 @@ namespace An
   void WindowResized()
   {
     if(Event.type == SDL_WINDOWEVENT)
-      if(Event.window.windowID == SDL_GetWindowID(Window))
-        if(Event.window.event == SDL_WINDOWEVENT_RESIZED)
+      if(Event.window.event == SDL_WINDOWEVENT_RESIZED)
+        if(Event.window.windowID == SDL_GetWindowID(Window))
           ViewPortUpdate();
   }
 }

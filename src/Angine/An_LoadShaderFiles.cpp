@@ -1,9 +1,6 @@
 #include "../../include/Angine/An_Render.hpp"
 #include "../../include/Angine/An_Utilities.hpp"
-#include "../../include/Angine/An_Globals.hpp"
-#include <iostream>
 #include <string>
-#include <fstream>
 
 namespace An
 {

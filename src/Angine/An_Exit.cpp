@@ -9,7 +9,7 @@ namespace An
   void Exit(int status)
   {
     CleanUps();
-    std::cout << "exiting the Angine..." << std::endl;
+    std::cout << "\nexiting the Angine..." << std::endl;
     exit(status);
   }
 }

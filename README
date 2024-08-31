@@ -13,3 +13,14 @@
     *after download
       put glad.c into src/glad/
       put glad.h into include/glad/
+
+-build instructions:
+    go to the project's root in your terminal.
+    type make.
+    wait till the beautiful build process finishes.
+    *if an error like 'tree command not found occured don't panic, it
+     simply means you haven't tree installed. just ignore it.
+    type ./build/An to run the Angine.
+
+
+-dont' forget to have fun...

@@ -2,10 +2,29 @@
 #define An_Render
 
 #include "../../include/glad/glad.h"
+#include <vector>
 #include <string>
 
 namespace An
 {
+
+  // vertex data. defined in An_VertexData.cpp
+  extern const std::vector<GLfloat> hi_tri;
+  extern const std::vector<GLfloat> tri_color;
+  extern const std::vector<GLfloat> tri_pos_col;
+
+  // defined in An_Render.cpp
+  extern GLuint VAO;
+  extern GLuint VBO;
+  extern GLuint VBO_Color;
+  extern GLuint ShaderProgram;
+  extern std::vector<GLfloat> BGColor;
+
+  // shader sources are defined in 
+  // An_vshader_src.cpp and An_fshader_src.cpp
+  extern std::string vshader_src;
+  extern std::string fshader_src;
+
   // defined in An_PipeLine.cpp
   void PipeLine();
 

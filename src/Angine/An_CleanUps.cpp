@@ -9,7 +9,7 @@ namespace An{
   void CleanUps()
   {
 
-    std::cout << "cleaning up the memory..." << std::endl;
+    std::cout << "\ncleaning up the memory..." << std::endl;
 
     DeleteContext();
 

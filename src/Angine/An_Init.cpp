@@ -7,14 +7,14 @@ namespace An{
 
     LoadSDL();
 
-    glAttribs(4,1,24,1);
-
     CreateWindow("Angine",
         0,0,
         540,360,
         SDL_WINDOW_OPENGL);
 
     CreateContext();
+
+    glAttribs(4,1,24,1,2);
 
     LoadGlad();
 

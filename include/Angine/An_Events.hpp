@@ -1,8 +1,13 @@
 #ifndef An_Events
 #define An_Events
 
+#include <SDL2/SDL.h>
+
 namespace An
 {
+
+  extern SDL_Event Event;
+
   // main event loop. defined in An_Events.cpp
   void Events();
 
