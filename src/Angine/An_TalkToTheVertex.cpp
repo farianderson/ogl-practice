@@ -9,8 +9,14 @@ namespace An
 
     glGenBuffers(1,&VBO);
     glBindBuffer(GL_ARRAY_BUFFER,VBO);
-    glBufferData(GL_ARRAY_BUFFER,tri_pos_col.size()*sizeof(GLfloat),
-        tri_pos_col.data(),GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER,quad_pos_col.size()*sizeof(GLfloat),
+        quad_pos_col.data(),GL_STATIC_DRAW);
+
+    glGenBuffers(1,&IBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,IBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+                 quad_indices.size()*sizeof(GLuint),
+                 quad_indices.data(),GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,

@@ -12,11 +12,14 @@ namespace An
   extern const std::vector<GLfloat> hi_tri;
   extern const std::vector<GLfloat> tri_color;
   extern const std::vector<GLfloat> tri_pos_col;
+  extern const std::vector<GLfloat> quad_pos_col;
+  extern const std::vector<GLuint> quad_indices;
 
   // defined in An_Render.cpp
   extern GLuint VAO;
   extern GLuint VBO;
   extern GLuint VBO_Color;
+  extern GLuint IBO;
   extern GLuint ShaderProgram;
   extern std::vector<GLfloat> BGColor;
 
