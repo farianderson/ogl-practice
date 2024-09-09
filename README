@@ -1,7 +1,10 @@
 -this is on linux/deiban-sid
 
--needs SDL2 library installed:
-    apt install libsdl2-dev
+-needs SDL2 library
+    install: apt install libsdl2-dev
+
+-needs glm library
+    install: apt install libglm-dev
 
 -needs glad library
     download from https://glad.dav1d.de/
