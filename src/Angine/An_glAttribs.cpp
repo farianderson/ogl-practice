@@ -6,7 +6,7 @@ namespace An
 {
   // sets opengl attributes. defined in An_SetAttributes.cpp
   void glAttribs(int major, int minor, int depth_size,
-                 int doublebuffer,int vsync)
+                 int doublebuffer)
   {
     if(SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION,major)<0)
     {
@@ -30,12 +30,6 @@ namespace An
     if(SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,doublebuffer)<0)
     {
       std::cout << "\nglAttribs DOUBLEBUFFER failed: ";
-      std::cerr << SDL_GetError() << std::endl;
-    }
-
-    if(SDL_GL_SetSwapInterval(vsync)<0)
-    {
-      std::cout << "\nSDL_GL_SetSwapInterval failed: ";
       std::cerr << SDL_GetError() << std::endl;
     }
 

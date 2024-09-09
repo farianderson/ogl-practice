@@ -13,7 +13,7 @@ namespace An
   extern const std::vector<GLfloat> tri_color;
   extern const std::vector<GLfloat> tri_pos_col;
   extern const std::vector<GLfloat> quad_pos_col;
-  extern const std::vector<GLuint> quad_indices;
+  extern const std::vector<GLuint> indices;
 
   // defined in An_Render.cpp
   extern GLuint VAO;
@@ -34,6 +34,14 @@ namespace An
   // creates some vertex data and sends it to the GPU.
   // defined in An_TalkToTheVertex.cpp
   void TalkToTheVertex();
+
+  // generates a grid of vertices of x rows and y columns.
+  // *** x and y must be greater than 1 ***
+  // defined in An_VertexData.cpp
+  const std::vector<GLfloat> grid(uint x, uint y);
+
+  // prints the elements of vec. defined in An_VertexData.cpp
+  void printVerts(const std::vector<GLfloat>&vec);
 
   // defined in An_PreDraw.cpp
   void PreDraw();

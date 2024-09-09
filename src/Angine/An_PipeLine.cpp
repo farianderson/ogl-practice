@@ -9,6 +9,7 @@ namespace An
   {
     PreDraw();
     Draw();
+    //SDL_Delay(134);
     SDL_GL_SwapWindow(Window);
   }
 }

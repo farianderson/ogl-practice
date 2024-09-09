@@ -4,19 +4,21 @@ namespace An
 {
   void TalkToTheVertex()
   {
+    std::vector<GLfloat>mesh = grid(10,10);
+
     glGenVertexArrays(1,&VAO);
     glBindVertexArray(VAO);
 
     glGenBuffers(1,&VBO);
     glBindBuffer(GL_ARRAY_BUFFER,VBO);
-    glBufferData(GL_ARRAY_BUFFER,quad_pos_col.size()*sizeof(GLfloat),
-        quad_pos_col.data(),GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER,mesh.size()*sizeof(GLfloat),
+                 mesh.data(),GL_STATIC_DRAW);
 
     glGenBuffers(1,&IBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,IBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER,
-                 quad_indices.size()*sizeof(GLuint),
-                 quad_indices.data(),GL_STATIC_DRAW);
+                 indices.size()*sizeof(GLuint),
+                 indices.data(),GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,
@@ -33,6 +35,7 @@ namespace An
 
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER,0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);//idk if it's necessary;
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
   }

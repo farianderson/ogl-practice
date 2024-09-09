@@ -5,6 +5,9 @@
 
 namespace An
 {
+  extern const Uint8* KeyboardState;
+  extern SDL_Keymod KeyMod;
+
   // initializing the Angine. defined in An_Init.cpp
   void Init();
 
@@ -13,7 +16,7 @@ namespace An
 
   // sets opengl attributes. defined in An_glAttribs.cpp
   void glAttribs(int major, int minor, int depth_size,
-                 int doublebuffer, int vsync);
+                 int doublebuffer);
 
   // creates An::Window, the Angine's window. defined in An_CreateWindow.cpp
   void CreateWindow(const char* title, int x, int y, int w, int h,
