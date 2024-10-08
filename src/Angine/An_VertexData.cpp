@@ -1,6 +1,7 @@
 #include "../../include/Angine/An_Render.hpp"
 #include <iostream>
 #include <iomanip>
+#include <random>
 
 namespace An
 {
@@ -42,14 +43,14 @@ namespace An
     1.0, 0.0, 1.0,
   };
   //const std::vector<GLuint> indices=
-  //{
-    //0,9,10,19,20,29,30,39,40,49,50,59,60,69,70,79,80,89,90,99,
-    //0,90,1,91,2,92,3,93,4,94,5,95,6,96,7,97,8,98,9,99,
-  //}; // GL_LINES
+    //{
+      //0,9,10,19,20,29,30,39,40,49,50,59,60,69,70,79,80,89,90,99,
+      //0,90,1,91,2,92,3,93,4,94,5,95,6,96,7,97,8,98,9,99,
+      //}; // GL_LINES
 
   const std::vector<GLuint> indices=
   {
-     0,
+    0,
     10, 1,11, 2,12, 3,13, 4,14, 5,15, 6,16, 7,17, 8,18, 9,19,
     29,18,28,17,27,16,26,15,25,14,24,13,23,12,22,11,21,10,20,
     30,21,31,22,32,23,33,24,34,25,35,26,36,27,37,28,38,29,39,
@@ -71,6 +72,11 @@ namespace An
     GLfloat yr=1.0/(y-1);
     GLfloat min = -.8;
     GLfloat max = 0.8;
+
+    std::random_device rd;
+    std::mt19937 mtengine(rd());
+    std::uniform_real_distribution<> rdistro(0,1);
+
     std::vector<GLfloat> grid;
     for(uint i=0;i<x;i++)
       for(uint j=0;j<y;j++)
@@ -79,9 +85,9 @@ namespace An
         GLfloat ty=yr*j;
         grid.push_back((1-ty)*min + ty*max);
         grid.push_back((1-tx)*min + tx*max);
-        grid.push_back((float)j/(y-1));
-        grid.push_back((float)i/(x-1));
-        grid.push_back((float)(i*y+j)/(x*y-1));
+        grid.push_back((float)rdistro(mtengine));
+        grid.push_back((float)rdistro(mtengine));
+        grid.push_back((float)rdistro(mtengine));
       }
     return grid;
   }

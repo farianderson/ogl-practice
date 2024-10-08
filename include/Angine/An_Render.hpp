@@ -8,6 +8,10 @@
 namespace An
 {
 
+  // defined in An_Render.cpp
+  extern int fovx;
+  extern int fovy;
+
   // vertex data. defined in An_VertexData.cpp
   extern const std::vector<GLfloat> hi_tri;
   extern const std::vector<GLfloat> tri_color;
@@ -27,6 +31,10 @@ namespace An
   // An_vshader_src.cpp and An_fshader_src.cpp
   extern std::string vshader_src;
   extern std::string fshader_src;
+
+  // set the uniform variables of An_ShaderProgram.
+  // defined in An_Uniforms.cpp
+  void SetUniforms(float r);
 
   // defined in An_PipeLine.cpp
   void PipeLine();

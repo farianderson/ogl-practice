@@ -1,5 +1,4 @@
 #include "../../include/Angine/An_Render.hpp"
-#include "../../include/Angine/An_CleanUps.hpp"
 #include <iostream>
 
 namespace An
@@ -18,14 +17,14 @@ namespace An
     return false;
   }
 
-#define glCheck(x) glClearErrors();x;if(glIsError(#x,__LINE__,__FILE_NAME__)) Exit(1);
+#define glCheck(x) glClearErrors();x;if(glIsError(#x,__LINE__,__FILE_NAME__)) return;
   void Draw()
   {
     glBindVertexArray(VAO);
     //glDrawArrays(GL_TRIANGLES,0,3);
     //glCheck(glDrawElements(GL_LINES,indices.size(),GL_UNSIGNED_INT,
-                   //(GLvoid*)(sizeof(GLuint)*0)));
+    //(GLvoid*)(sizeof(GLuint)*0)));
     glDrawElements(GL_TRIANGLE_STRIP,indices.size(),GL_UNSIGNED_INT,
-                   (GLvoid*)(sizeof(GLuint)*0));
+        (GLvoid*)(sizeof(GLuint)*0));
   }
 }

@@ -1,6 +1,5 @@
 #include "../../include/Angine/An_Events.hpp"
 #include "../../include/Angine/An_Globals.hpp"
-#include <iostream>
 
 namespace An
 {
@@ -13,7 +12,8 @@ namespace An
       }
 
       KeyMod = SDL_GetModState();
-      if(KeyboardState[SDL_SCANCODE_Q] && (KeyMod & KMOD_CTRL))
+      if((KeyboardState[SDL_SCANCODE_Q] ||
+          KeyboardState[SDL_SCANCODE_W]) && (KeyMod & KMOD_CTRL))
         IsPlaying = false;
   }
 }
